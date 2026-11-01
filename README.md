@@ -1,31 +1,61 @@
-# Portfolio — projekt lokalny
+# Moje portfolio — WDAI
 
-Otwórz http://127.0.0.1:8000. Ponowne uruchomienie z folderu `lab2`:
+Rozwijam tę stronę w ramach projektu z aplikacji internetowych. Przygotowuję osobiste portfolio, w którym przedstawiam swoje projekty, doświadczenie i notatki z nauki frontendu.
+
+## Zawartość projektu
+
+Mój projekt składa się z pięciu podstron:
+
+- **Start** — przedstawiam siebie i wybrane projekty.
+- **Projekty** — prezentuję galerię ilustracji i materiał wideo.
+- **Doświadczenie** — zamieszczam tabelę doświadczenia i edukacji.
+- **Notatnik** — publikuję artykuł o tworzeniu pierwszej strony internetowej.
+- **Kontakt** — udostępniam formularz z polem e-mail, wyborem tematu i wiadomością.
+
+Na podstronach stosuję wspólną nawigację, stopkę i arkusz stylów.
+
+## Technologie
+
+W projekcie wykorzystuję:
+
+- HTML5 do struktury strony i semantycznego oznaczania treści;
+- CSS3, Grid, Flexbox i media queries do wyglądu oraz dostosowania układu do różnych ekranów;
+- JavaScript do pokazywania dodatkowego menu po przewinięciu głównego nagłówka poza ekran.
+
+Korzystam z lokalnych obrazów i filmu, bez zewnętrznych bibliotek frontendowych.
+
+## Formularz kontaktowy
+
+W formularzu wykorzystuję walidację przeglądarki: wymagane pola, typ `email` oraz ograniczenia długości wiadomości.
+
+Na tym etapie formularz służy do demonstracji. Po poprawnym uzupełnieniu pól wyświetlam potwierdzenie walidacji, ale wiadomość nie jest wysyłana. Dane formularza trafiają do adresu URL, dlatego do testów używam danych przykładowych.
+
+## Uruchomienie lokalne
+
+Po pobraniu plików strony otwieram `index.html` w przeglądarce. Mogę też uruchomić serwer w katalogu zawierającym ten plik:
 
 ```powershell
 py -m http.server 8000 --bind 127.0.0.1
 ```
 
-Można też otworzyć `index.html` bez serwera. Strona nie wymaga instalowania bibliotek, dostępu do internetu ani JavaScriptu. Wszystkie style są w `style.css`.
+Następnie otwieram adres http://127.0.0.1:8000.
 
-## Zakres
+## Stan repozytorium
 
-- Pięć stron ze wspólną nawigacją, oznaczeniem bieżącej strony, semantycznym HTML i stopką.
-- Treść artykułu, doświadczenia oraz ilustracja laptopa zaadaptowane z ZIP, bez zmieniania oryginalnego archiwum ani folderu lab1.
-- Formularz: e-mail, wybór tematu, wiadomość, etykiety, wymagane pola i walidacja przeglądarki. Przycisk otwiera lokalny komunikat demonstracyjny. Nie wysyła poczty. Dane formularza trafiają do adresu URL lokalnej strony; nie należy wpisywać poufnych informacji.
-- Galeria lokalnych obrazów SVG i lokalny film MP4 z kontrolkami.
-- Układy Grid i Flexbox, media queries, obsługa klawiatury, widoczny fokus oraz ograniczenie ruchu zgodnie z preferencjami systemowymi.
+Na razie dodałem do repozytorium tylko ten opis. Pliki HTML, CSS, JavaScript i media znajdują się jeszcze poza repozytorium. Aby można było pobrać i uruchomić cały projekt, muszę również je tutaj wgrać.
 
-## Granice względem pełnej specyfikacji
+Nie opublikowałem jeszcze strony przez GitHub Pages, dlatego nie zamieszczam na razie linku do działającej wersji.
 
-Zgodnie z prośbą nie dodano JavaScriptu (osobne kryterium za 2 pkt). Strona działa lokalnie, nie została publicznie opublikowana (osobne kryterium za 0,5 pkt). Tych kryteriów nie można uznać za spełnione samym CSS. Ostateczna ocena pozostałych kryteriów należy do prowadzącego.
+## Dalsze prace
 
-Nazwisko i treść doświadczenia pochodzą z dotychczasowej pracy: Szymon Firek. Należy podmienić je na własne, jeśli są przykładowe.
+Planuję uzupełnić repozytorium o pliki strony, sprawdzić układ na telefonie, tablecie i komputerze oraz dopracować galerię, opisy obrazów i hierarchię nagłówków. Następnie opublikuję stronę i dodam tutaj jej adres.
 
 ## Media
 
-- `images/workspace.svg`: ilustracja z dostarczonego archiwum.
-- `images/project-*.svg`, `images/favicon.svg`: lokalne ilustracje przygotowane do tego projektu.
-- `media/inspiration.mp4`: przykładowy film kwiatów CC0 z MDN: https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4.
+Wykorzystuję ilustracje SVG z materiałów projektu oraz przykładowy film kwiatów udostępniony jako CC0 w materiałach MDN:
 
-Sprawdzono odpowiedzi HTTP pięciu stron, odnośniki do lokalnych plików, obecność głównych elementów semantycznych, teksty alternatywne i nagłówek pliku MP4. Podgląd wizualny w przeglądarce nie był dostępny w sesji wykonawczej.
+https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4
+
+## Autor
+
+Szymon Firek
