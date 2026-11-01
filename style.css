@@ -144,3 +144,257 @@ main.container {
 @media (prefers-reduced-motion: reduce) {
     .floating-nav { transition: none; }
 }
+
+/* Elastyczne wymiary zapobiegają rozszerzaniu kolumn przez ich zawartość. */
+.container > *,
+.hero > *,
+.intro-strip > *,
+.projects-grid > *,
+.article-layout > *,
+.video-section > *,
+.contact-layout > *,
+.skills-row > *,
+.header-inner > *,
+.footer-inner > * {
+    min-width: 0;
+}
+
+main.container {
+    padding-inline: clamp(16px, 2.5vw, 28px);
+}
+
+h1, h2, h3, p, label, small, .contact-detail strong {
+    overflow-wrap: anywhere;
+}
+
+.actions, .section-heading, .contact-banner, .footer-inner {
+    flex-wrap: wrap;
+}
+
+.button {
+    max-width: 100%;
+    min-height: 44px;
+}
+
+.button > span, .brand-icon, .project-card h3 span {
+    flex-shrink: 0;
+}
+
+.project-card h3 a {
+    gap: 12px;
+}
+
+.text-link {
+    white-space: normal;
+}
+
+input, select, textarea {
+    min-width: 0;
+    max-width: 100%;
+}
+
+video {
+    display: block;
+    max-width: 100%;
+}
+
+.table-scroll {
+    max-width: 100%;
+    overscroll-behavior-x: contain;
+}
+
+/* Tablet: spokojniejsze odstępy i pełna szerokość głównej sekcji. */
+@media (max-width: 1050px) {
+    .site-header .header-inner {
+        gap: 16px;
+    }
+
+    .site-header nav {
+        flex: 1 1 100%;
+        justify-content: flex-start;
+    }
+
+    .site-header nav a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+    }
+
+    .hero {
+        grid-template-columns: minmax(0, 1fr);
+        padding-block: 48px;
+        gap: 40px;
+    }
+
+    .hero h1 {
+        font-size: clamp(34px, 6vw, 58px);
+    }
+
+    .hero .lead {
+        max-width: 650px;
+    }
+
+    .hero-art {
+        width: 94%;
+        max-width: 600px;
+        margin-inline: auto;
+    }
+
+    .hero-art > img {
+        height: auto;
+        aspect-ratio: 2 / 1;
+    }
+
+    /* Jednorzędowe menu przewija się we własnym obszarze. */
+    .floating-nav {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scroll-padding-inline: 12px;
+        scrollbar-width: thin;
+    }
+
+    .floating-nav a {
+        flex: 0 0 auto;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+    }
+}
+
+@media (max-width: 900px) {
+    .article-layout, .contact-layout, .video-section {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 32px;
+    }
+
+    .contact-info > p {
+        max-width: 100%;
+    }
+
+    .reading, .form-card, .aside-card {
+        padding: clamp(18px, 3vw, 28px);
+    }
+
+    .skills-row {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .skills-row > div {
+        padding: 20px;
+    }
+}
+
+/* Telefon: ta sama kolejność treści, jedna kolumna i wygodne pola dotykowe. */
+@media (max-width: 760px) {
+    .container {
+        width: calc(100% - 24px);
+    }
+
+    .header-inner {
+        align-items: stretch;
+    }
+
+    .brand {
+        flex-wrap: wrap;
+        white-space: normal;
+    }
+
+    .brand-sub {
+        display: none;
+    }
+
+    .site-header nav {
+        flex: none;
+        width: 100%;
+    }
+
+    .site-header nav a {
+        flex: 1 1 auto;
+    }
+
+    .floating-nav {
+        max-width: calc(100% - 16px);
+    }
+
+    .hero {
+        padding-block: 36px 44px;
+    }
+
+    .hero-art {
+        transform: none;
+        width: 100%;
+        max-width: 520px;
+    }
+
+    .art-top, .art-bottom {
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .art-note {
+        max-width: calc(100% - 20px);
+        font-size: 14px;
+    }
+
+    .intro-strip {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .intro-strip > a {
+        display: inline-block;
+        justify-self: start;
+    }
+
+    .projects-grid, .skills-row {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .page-heading h1 {
+        font-size: clamp(30px, 6.5vw, 46px);
+    }
+
+    input, select, textarea {
+        font-size: 16px;
+    }
+
+    .footer-inner {
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+    }
+
+    .actions .text-link {
+        align-self: flex-start;
+    }
+
+    .section-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .contact-banner {
+        padding: 22px 18px;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .footer-inner > span {
+        margin-left: 0;
+    }
+}
+
